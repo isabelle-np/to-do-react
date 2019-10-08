@@ -19,13 +19,13 @@ class App extends Component {
         {
           id: 2,
           name: "Dishes",
-          description: "Load the dishwasher and put them all away",
+          description: "Load dishwasher and put away dishes",
           completed: false
         },
         {
           id: 3,
           name: "Water Plants",
-          description: "Water the aloe, basil, and succulent plants",
+          description: "Water the aloe and basil plants",
           completed: false
         }
       ]
@@ -37,6 +37,32 @@ class App extends Component {
 
     for (let task of tasks) {
       if (task.id === id) {
+        task.completed = !task.completed;
+        break;
+      }
+    }
+
+    this.setState({ tasks })
+  };
+
+  handleOnEnter = id => {
+    const tasks = _.cloneDeep(this.state.tasks);
+
+    for (let task of tasks) {
+      if (task.id === id && !task.completed) {
+        task.completed = !task.completed;
+        break;
+      }
+    }
+
+    this.setState({ tasks })
+  };
+
+  handleOnLeave = id => {
+    const tasks = _.cloneDeep(this.state.tasks);
+
+    for (let task of tasks) {
+      if (task.id === id && task.completed) {
         task.completed = !task.completed;
         break;
       }
@@ -61,6 +87,8 @@ class App extends Component {
               completed={task.completed}
               description={task.description}
               handleOnClick={this.handleOnClick}
+              handleOnEnter={this.handleOnEnter}
+              handleOnLeave={this.handleOnLeave}
             />
           ))}
         </ul>

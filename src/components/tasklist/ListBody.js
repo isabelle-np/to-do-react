@@ -5,7 +5,9 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    padding: "1em"
+    padding: "1em",
+    marginLeft: "1em"
+
   },
   name: {
     fontSize: "1.5em",

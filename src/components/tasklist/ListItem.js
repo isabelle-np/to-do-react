@@ -10,10 +10,10 @@ const styles = {
         color: "rgb(206, 206, 206)",
         marginBottom: "1.5em",
         cursor: "pointer",
-        borderRadius: "5px"
+        borderRadius: "5px",
     },
     leftWall: color => ({
-        width: "5%",
+        width: "7%",
         backgroundColor: color,
         borderRadius: "5px 0 0 5px"
     })
@@ -25,6 +25,9 @@ export default class ListItem extends PureComponent {
             <li 
                 style={styles.li}
                 onClick={() => this.props.handleOnClick(this.props.id)}
+                onMouseEnter={() => this.props.handleOnEnter(this.props.id)}
+                onMouseLeave={() => this.props.handleOnLeave(this.props.id)}
+
             >
                 <div style={styles.leftWall(this.props.completed ? "#3D9970" : "#FF4136")}/>
                 <ListBody name={this.props.name} description={this.props.description}/>
