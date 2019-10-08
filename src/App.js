@@ -3,7 +3,7 @@ import "./App.css";
 import ListItem from "./ListItem";
 import _ from "lodash";
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -28,11 +28,12 @@ class App extends React.Component {
           completed: true
         }
       ]
-    }
+    };
   }
 
   handleOnClick = id => {
     const tasks = _.cloneDeep(this.state.tasks);
+
     for (let task of tasks) {
       if (task.id === id) {
         task.completed = !task.completed;
@@ -41,7 +42,7 @@ class App extends React.Component {
     }
 
     this.setState({ tasks })
-  }
+  };
 
   render() {
     const { tasks } = this.state;
