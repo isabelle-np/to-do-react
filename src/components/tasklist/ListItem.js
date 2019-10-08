@@ -22,7 +22,7 @@ export default class ListItem extends PureComponent {
         return (
             <li 
                 style={styles.li}
-                onlick={() => this.props.handleOnClick(this.props.id)}
+                onClick={() => this.props.handleOnClick(this.props.id)}
             >
                 <div style={styles.leftWall(this.props.completed ? "green" : "red")}/>
                 <ListBody name={this.props.name} description={this.props.description}/>

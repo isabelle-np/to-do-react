@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import ListItem from "./ListItem";
+import ListItem from '../tasklist/ListItem';
 import _ from "lodash";
 
 class App extends Component {
