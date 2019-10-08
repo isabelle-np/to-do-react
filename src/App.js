@@ -1,5 +1,7 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import ListItem from "./ListItem";
+import _ from "lodash";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,12 +31,36 @@ class App extends React.Component {
     }
   }
 
+  handleOnClick = id => {
+    const tasks = _.cloneDeep(this.state.tasks);
+    for (let task of tasks) {
+      if (task.id === id) {
+        task.completed = !task.completed;
+        break;
+      }
+    }
+
+    this.setState({ tasks })
+  }
+
   render() {
-    const { tasks } = this.state
+    const { tasks } = this.state;
+    
     return (
       <div className="App">
         <h1>To Do</h1>
-        <ul>test</ul>
+        <ul>
+          {tasks.map(task => (
+            <ListItem 
+              key={task.id}
+              id={task.id}
+              name={task.name}
+              completed={task.completed}
+              description={task.description}
+              handleOnClick={this.handleOnClick}
+            />
+          ))}
+        </ul>
       </div>
     );
   }
