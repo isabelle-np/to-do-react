@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import ListItem from '../tasklist/ListItem';
 import _ from "lodash";
+import Footer from '../footer/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -13,19 +14,19 @@ class App extends Component {
           id: 1,
           name: "Laundry",
           description: "Wash, dry, and fold dirty clothes",
-          completed: true
+          completed: false
         },
         {
           id: 2,
           name: "Dishes",
           description: "Load the dishwasher and put them all away",
-          completed: true
+          completed: false
         },
         {
           id: 3,
           name: "Water Plants",
           description: "Water the aloe, basil, and succulent plants",
-          completed: true
+          completed: false
         }
       ]
     };
@@ -50,6 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>To Do</h1>
+        <p>Click on completed tasks to mark them as done</p>
         <ul>
           {tasks.map(task => (
             <ListItem 
@@ -62,6 +64,8 @@ class App extends Component {
             />
           ))}
         </ul>
+        {//<Footer/>
+        }
       </div>
     );
   }

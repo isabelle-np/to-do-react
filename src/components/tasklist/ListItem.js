@@ -5,15 +5,17 @@ const styles = {
     li: {
         display: "flex",
         justifyContent: "flex-start",
-        background: "white",
+        background: "#252525",
         boxShadow: "2px 4px 10px rgba(0, 0, 0, 0.2)",
-        color: "#707070",
-        marginBottom: "1em",
-        cursor: "pointer"
+        color: "rgb(206, 206, 206)",
+        marginBottom: "1.5em",
+        cursor: "pointer",
+        borderRadius: "5px"
     },
     leftWall: color => ({
-        width: "0.5em",
-        backgroundColor: color
+        width: "5%",
+        backgroundColor: color,
+        borderRadius: "5px 0 0 5px"
     })
 };
 
@@ -24,7 +26,7 @@ export default class ListItem extends PureComponent {
                 style={styles.li}
                 onClick={() => this.props.handleOnClick(this.props.id)}
             >
-                <div style={styles.leftWall(this.props.completed ? "green" : "red")}/>
+                <div style={styles.leftWall(this.props.completed ? "#3D9970" : "#FF4136")}/>
                 <ListBody name={this.props.name} description={this.props.description}/>
             </li>
         )

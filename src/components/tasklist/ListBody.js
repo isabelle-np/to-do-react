@@ -8,10 +8,13 @@ const styles = {
     padding: "1em"
   },
   name: {
-    fontSize: "2em"
+    fontSize: "1.5em",
+    fontWeight: "400",
+    marginBottom: "0.3rem"
   },
   description: {
-    fontSize: "0.8em"
+    fontSize: "0.8em",
+    marginBottom: "0.3rem"
   }
 };
 
