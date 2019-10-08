@@ -45,32 +45,6 @@ class App extends Component {
     this.setState({ tasks })
   };
 
-  handleOnEnter = id => {
-    const tasks = _.cloneDeep(this.state.tasks);
-
-    for (let task of tasks) {
-      if (task.id === id && !task.completed) {
-        task.completed = !task.completed;
-        break;
-      }
-    }
-
-    this.setState({ tasks })
-  };
-
-  handleOnLeave = id => {
-    const tasks = _.cloneDeep(this.state.tasks);
-
-    for (let task of tasks) {
-      if (task.id === id && task.completed) {
-        task.completed = !task.completed;
-        break;
-      }
-    }
-
-    this.setState({ tasks })
-  };
-
   render() {
     const { tasks } = this.state;
     
@@ -87,8 +61,6 @@ class App extends Component {
               completed={task.completed}
               description={task.description}
               handleOnClick={this.handleOnClick}
-              handleOnEnter={this.handleOnEnter}
-              handleOnLeave={this.handleOnLeave}
             />
           ))}
         </ul>

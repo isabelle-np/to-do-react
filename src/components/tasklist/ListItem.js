@@ -25,9 +25,6 @@ export default class ListItem extends PureComponent {
             <li 
                 style={styles.li}
                 onClick={() => this.props.handleOnClick(this.props.id)}
-                onMouseEnter={() => this.props.handleOnEnter(this.props.id)}
-                onMouseLeave={() => this.props.handleOnLeave(this.props.id)}
-
             >
                 <div style={styles.leftWall(this.props.completed ? "#3D9970" : "#FF4136")}/>
                 <ListBody name={this.props.name} description={this.props.description}/>
