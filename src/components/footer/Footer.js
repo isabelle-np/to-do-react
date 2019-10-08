@@ -2,13 +2,10 @@ import React, { Component } from "react";
 
 const styles = {
     footer: {
-        width: "100vw",
-        height: "10%",
-        backgroundColor: "red",
-        flexShrink: "0"
+        marginTop: "4em"
     },
     credit: {
-        textAlign: "left",
+        fontSize: "0.9em"
     }
 };
 
@@ -16,7 +13,7 @@ class Footer extends Component {
     render() {
         return (
             <footer style={styles.footer}>
-                <span style={styles.credit}>Designed & Developed by Isabelle Nguyen-Phuoc</span>
+                <p style={styles.credit}>Designed & Developed by <a href="https://www.linkedin.com/in/isabellenguyenphuoc/">Isabelle Nguyen-Phuoc</a></p>
             </footer>
         )
     }
